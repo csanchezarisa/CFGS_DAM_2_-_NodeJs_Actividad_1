@@ -1,0 +1,24 @@
+extends master.pug 
+
+block title 
+    title Cliente 
+
+block content 
+    if error 
+        .alert.alert-danger.alert-dismissible 
+            button(type="button", data-dismiss="alert").close &times;
+            <strong>¡Error!</strong> Ha habido un error validando el usuario. Por favor, prueba de nuevo. 
+    .row
+        .col-6.pt-5.bg-white.text-center
+            img.d-inline-block.align-top.w-100(src='/images/logo.png' alt='logo')
+        .col-4.p-3.mb-5.bg-danger.rounded
+            h1.text-white.text-center Área de clientes
+            form(action="/clientes/login", method="post") 
+                .form-group
+                  label.text-light(for='dni') Documento de identidad
+                  input#dni.form-control(name="dni", type="text")
+                .form-group
+                  label.text-light(for='pwd') Introduce tu contraseña
+                  input#pwd.form-control(name="pwd", type="password")
+                .form-group.text-right 
+                    button(type="submit").btn Entrar

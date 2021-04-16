@@ -1,0 +1,27 @@
+extends master.pug 
+
+block title 
+    title Partes 
+
+block content 
+
+    if updatedCorrectly
+        .alert.alert-success.alert-dismissible 
+            button(type="button", data-dismiss="alert").close &times;
+            <strong>¡Éxito!</strong> Se ha subido el archivo correctamente. 
+
+    else 
+        if updatedCorrectly === false
+            .alert.alert-danger.alert-dismissible 
+                button(type="button", data-dismiss="alert").close &times;
+                <strong>¡Error!</strong> Ha habido un error subiendo el fichero. <br/> Por favor, prueba de nuevo y asegurate que tiene la extensión PDF. 
+
+        h1 Nuevo parte 
+        hr
+        .col-12.p-3.mb-5.bg-danger.rounded
+            form(action="/partes", method="post", enctype="multipart/form-data")
+                .form-group
+                    p.text-white Selecciona un archivo en formato PDF 
+                    input#file(type="file", name="file", style="width: 100%").form-control
+                .form-group.text-right
+                    button(type="submit").btn Enviar

@@ -1,0 +1,13 @@
+extends master.pug 
+
+block title
+    title Pólizas 
+
+block content 
+    h1 Mis pólizas
+
+    each poliza in polizas 
+        hr
+        .col-12.p-3.mb-5.bg-danger.rounded
+            h1.text-white  Pólizas nº: <a href='/polizas/#{poliza}'>#{poliza}</a> 
+    

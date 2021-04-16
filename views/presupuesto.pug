@@ -1,0 +1,19 @@
+extends master.pug 
+
+block title 
+    title Presupuesto 
+
+block content
+    h1.text-center Presupuesto 
+    hr
+    h1.text-danger.text-center Seguro terceros 
+    .col-12.p-3.mb-5.bg-danger.rounded.text-right 
+        h1.text-white #{terceros}€
+    hr
+    h1.text-danger.text-center Seguro a todo riesgo (Franquicia 200€)
+    .col-12.p-3.mb-5.bg-danger.rounded.text-right 
+        h1.text-white #{franquicia}€
+    hr
+    h1.text-danger.text-center Seguro a todo riesgo
+    .col-12.p-3.mb-5.bg-danger.rounded.text-right 
+        h1.text-white #{todoRiesgo}€
